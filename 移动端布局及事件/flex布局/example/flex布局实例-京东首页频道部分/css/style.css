@@ -16,7 +16,7 @@ a {
 }
 .channel {
   display: flex;
-  padding-top: 0.4rem;
+  padding: 0.4rem 0.5rem 0;
 }
 .channel div {
   flex-grow: 1;
