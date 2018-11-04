@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>侧轴方向富裕管理</title>
+  <style>
+    *{padding: 0;margin: 0;}
+    .flex-base-layout{
+      text-align: center;
+      color: #fff;
+      font-size: 30px;
+    }
+    .flex-base-layout{
+      background-color: yellow;
+      height: 200px;
+    }
+    .flex-base-layout>div{
+      background-color: #f00;
+      width: 100px;
+      height: 100px;
+    }
+    .flex-base-layout1{
+      display: flex;
+      align-items: flex-start;
+    }
+    .flex-base-layout2{
+      display: flex;
+      align-items: flex-end;
+    }
+    .flex-base-layout3{
+      display: flex;
+      align-items: center;
+    }
+    .flex-base-layout4{
+      display: flex;
+      align-items: baseline;
+    }
+    .flex-base-layout4>div:nth-last-of-type(2){
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body>
+    <h3>flex富裕空间--元素在侧轴开始位置，富裕空间在侧轴结束位置</h3>
+    <div class="flex-base-layout flex-base-layout1">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+    <hr>
+    <h3>flex富裕空间--元素在侧轴结束位置，富裕空间在侧轴开始位置</h3>
+    <div class="flex-base-layout flex-base-layout2">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+    <hr>
+    <h3>flex富裕空间--元素在侧轴中间位置，富裕空间在侧轴两侧位置</h3>
+    <div class="flex-base-layout flex-base-layout3">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+    <hr>
+    <h3>flex富裕空间--根据侧轴方向上文字的基线对齐</h3>
+    <div class="flex-base-layout flex-base-layout4">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+</body>
+</html>

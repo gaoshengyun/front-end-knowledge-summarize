@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>子元素位置设置</title>
+  <style>
+     *{padding: 0;margin: 0;}
+    .flex-base-layout{
+      text-align: center;
+      color: #fff;
+      font-size: 30px;
+    }
+    .flex-base-layout{
+      background-color: yellow;
+      height: 200px;
+    }
+    .flex-base-layout>div{
+      width: 100px;
+      height: 100px;
+    }
+    .flex-base-layout1{
+      display: flex;
+    }
+    .flex-base-layout1>div{
+      flex-grow: 1;
+    }
+    .flex-base-layout1>div:nth-of-type(1){
+      background-color: #f00;
+    }
+    .flex-base-layout1>div:nth-of-type(2){
+      background-color: cyan;
+    }
+    .flex-base-layout1>div:nth-of-type(3){
+      background-color: #09f;
+    }
+    .flex-base-layout1>div:nth-of-type(4){
+      background-color: #f90;
+    }
+    .flex-base-layout2{
+      display: flex;
+    }
+    .flex-base-layout2>div:nth-of-type(1){
+      background-color: #f00;
+    }
+    .flex-base-layout2>div:nth-of-type(2){
+      background-color: cyan;
+    }
+    .flex-base-layout2>div:nth-of-type(3){
+      background-color: #09f;
+      flex-grow: 2;
+    }
+    .flex-base-layout2>div:nth-of-type(4){
+      background-color: #f90;
+    }
+  </style>
+</head>
+<body>
+    <h3>flex子元素大小--子元素的尺寸=盒子的尺寸x子元素的box-flex属性的值/所有子元素在box-flex属性的值的和</h3>
+    <div class="flex-base-layout flex-base-layout1">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+    <hr>
+    <h3>flex子元素大小--子元素的尺寸=盒子的尺寸x子元素的box-flex属性的值/所有子元素在box-flex属性的值的和</h3>
+    <div class="flex-base-layout flex-base-layout2">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+</body>
+</html>

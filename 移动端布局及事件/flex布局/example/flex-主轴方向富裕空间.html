@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>主轴方向富裕空间</title>
+  <style>
+      *{padding: 0;margin: 0;}
+      .flex-base-layout{
+        text-align: center;
+        color: #fff;
+        font-size: 30px;
+      }
+      .flex-base-layout>div{
+        background-color: #f00;
+        width: 100px;
+        line-height: 100px;
+      }
+      .flex-base-layout1{
+        display: flex;
+        justify-content: start;
+      }
+      .flex-base-layout2{
+        display: flex;
+        justify-content: end;
+      }
+      .flex-base-layout3{
+        display: flex;
+        justify-content: center;
+      }
+      .flex-base-layout4{
+        display: flex;
+        justify-content: space-between;
+      }
+      .flex-base-layout5{
+        display: flex;
+        justify-content: space-around;
+      }
+      .flex-base-layout6{
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+    </style>
+</head>
+<body>
+    <h3>flex富裕空间--元素在主轴开始，富裕空间在主轴结束位置</h3>
+    <div class="flex-base-layout flex-base-layout1">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+    <hr>
+    <br>
+    <h3>flex富裕空间--元素在主轴开始，富裕空间在主轴开始位置</h3>
+    <div class="flex-base-layout flex-base-layout2">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+    <h3>flex富裕空间--元素在主轴结束位置，富裕空间在主轴开始位置</h3>
+    <div class="flex-base-layout flex-base-layout3">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+    <h3>flex富裕空间--元素在主轴中间位置，富裕空间在主轴两侧位置</h3>
+    <div class="flex-base-layout flex-base-layout4">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+    <h3>flex富裕空间--富裕空间平均分配在每个元素两侧</h3>
+    <div class="flex-base-layout flex-base-layout5">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+    <h3>flex富裕空间--均匀排列每个元素每个元素之间的间隔相等</h3>
+    <div class="flex-base-layout flex-base-layout6">
+      <div>111</div>
+      <div>222</div>
+      <div>333</div>
+      <div>444</div>
+    </div>
+</body>
+</html>
