@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件对象</title>
+  <style>
+    #div{width: 200px;height: 200px;background: #f00;position: absolute;left: 0;top: 0;font-size: 50px;color: #fff;}
+  </style>
+</head>
+<body>
+  <div id="div"></div>
+  
+  <script>
+    document.addEventListener('touchmove', e => e.preventDefault(), { passive: false })
+    // 当给某个元素加上了绑定事件之后,事件函数默认的第一个参数就是事件对象
+    var domDiv = document.getElementById('div')
+    domDiv.addEventListener('touchmove',move)
+    function move(e){
+      console.log(e.touches)  //当前屏幕上的事件对象
+      console.log(e.targetTouches)  //当前元素上的事件对象
+      console.log(e.changedTouches)  //涉及当前事件的手指的一个列表
+    }
+
+  </script>
+</body>
+</html>

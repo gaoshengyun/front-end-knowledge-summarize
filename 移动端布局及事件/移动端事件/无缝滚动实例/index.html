@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>京东2018双11首页无缝滚动</title>
+  <script>
+    ;~function(){
+      var html = document.documentElement;
+      html.style.fontSize = html.getBoundingClientRect().width / 15 + 'px';
+      document.addEventListener('touchstart', e => e.preventDefault(),{ passive: false })
+    }()
+  </script>
+  <style>
+    *{margin: 0;padding: 0;}
+    html,body{overflow-x: hidden;}
+    .wrap{
+      height: 7.2rem;
+      position: relative;
+    }
+    .list{
+      padding: 0;
+      margin: 0;
+      width:400%;
+      position: absolute;
+      top:0;
+      left:0;
+      list-style: none;
+    }
+    .list li{
+      float: left;
+      width:15rem;
+    }
+    .list img{
+      width:15rem;
+      display: block;
+    }
+    nav{
+      width:15rem;
+      height: 10px;
+      position: absolute;
+      bottom:5px;
+      z-index: 1;
+      text-align:center;
+    }
+    nav a{
+      width:15px;
+      height: 15px;
+      display: inline-block;
+      background: red;
+      border-radius:50%;
+      vertical-align:top;
+    }
+    nav a.current{
+      background:#fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+      <ul class="list">
+        <li>
+          <img src="./images/1.jpg" alt="">
+        </li>
+        <li>
+          <img src="./images/2.jpg" alt="">
+        </li>
+        <li>
+          <img src="./images/3.jpg" alt="">
+        </li>
+        <li>
+          <img src="./images/4.jpg" alt="">
+        </li>
+      </ul>
+      <nav>
+        <a href="###" class="current"></a>
+        <a href="###"></a>
+        <a href="###"></a>
+        <a href="###"></a>
+      </nav>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
