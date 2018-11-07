@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transform-2d-执行顺序</title>
+  <style>
+    #box{width: 100px;border: 1px solid #000;padding: 100px;}
+    #div1{width: 100px;height: 100px;background: #09f;transition: 5s;transform-origin: 30px top}
+    #div2{width: 100px;height: 100px;background: #f60;transition: 5s;transform-origin: 30px top}
+  </style>
+  <script>
+    document.addEventListener('touchstart',e => e.preventDefault,{passive:true})
+  </script>
+</head>
+<body>
+  <div id="box">
+    <div id="div1"></div>
+    <div id="div2"></div>
+  </div>
+  <script>
+    var div1 = document.querySelector('#div1')
+    var div2 = document.querySelector('#div2')
+    div1.addEventListener('touchstart',() => {
+      div1.style.WebkitTransform = div1.style.transform = 'scale(0.5) translateX(100px)'
+    })
+
+    div2.addEventListener('touchstart',() => {
+      div2.style.WebkitTransform = div2.style.transform = 'translateX(100px) scale(0.5)'
+    })
+    
+    
+  </script>
+</body>
+</html>

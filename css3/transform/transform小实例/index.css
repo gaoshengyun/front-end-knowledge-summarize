@@ -1,0 +1,5 @@
+*{margin: 0;padding: 0;}
+header{font-size: 20px;text-align: center;line-height: 40px;background: #000;color: #fff;}
+#wrap{position: absolute;left: 0;right: 0;bottom: 0;top: 40px;overflow: hidden;}
+#list{list-style-type: none;margin: 0;padding: 0;}
+#list>li{line-height: 30px;border-bottom: 1px solid #000;text-indent: 20px;}

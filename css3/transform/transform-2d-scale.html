@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transform-2d-scale</title>
+  <style>
+    #box{width: 100px;border: 1px solid #000;padding: 100px;}
+    #div1{width: 100px;height: 100px;background: #09f;transition: 1s;}
+  </style>
+  <script>
+    document.addEventListener('touchstart',e => e.preventDefault,{passive:true})
+  </script>
+</head>
+<body>
+  <div id="box">
+    <div id="div1"></div>
+  </div>
+  <script>
+    var div1 = document.querySelector('#div1')
+    div1.addEventListener('touchstart',() => {
+      div1.style.WebkitTransform = div1.style.transform = 'scale(.1)'
+    })
+    
+    
+  </script>
+</body>
+</html>
