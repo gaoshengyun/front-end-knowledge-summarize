@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transform-3d-backface-visibility</title>
+  <style>
+    #box{width: 100px;border: 1px solid #000;padding: 100px;background: #000;}
+    #div1{width: 100px;height: 100px;transition: 5s;-webkit-transform-style: preserve-3d; transform-style: preserve-3d;position: relative;perspective:100px;perspective: 50px;}
+    #div1>span{
+      position: absolute;
+      font-size: 50px;
+      text-align: center;
+      color: #fff;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    #div1>span:nth-of-type(1){
+      background: #ff0000;
+      width: 50px;
+      height: 50px;
+      left: 25px;
+      top: 25px;
+      line-height: 50px;
+      -webkit-transform: translateZ(10px) rotateY(0deg);
+      transform: translateZ(10px) rotateY(0deg)
+    }
+    #div1>span:nth-of-type(2){
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      background: greenyellow;
+      -webkit-transform: translateZ(10px) rotateY(180deg);
+      transform: translateZ(10px) rotateY(180deg);
+
+    }
+  </style>
+  <script>
+    document.addEventListener('touchstart', e => e.preventDefault, { passive: true })
+  </script>
+</head>
+<body>
+    <div id="box">
+      <div id="div1">
+          <span>正</span>
+          <span>反</span>
+      </div>
+    </div>
+    <script>
+      var div1 = document.querySelector('#div1')
+      div1.addEventListener('touchstart', () => {
+        div1.style.WebkitTransform = div1.style.transform = 'rotateY(360deg)'
+      })
+    </script>
+</body>
+</html>
