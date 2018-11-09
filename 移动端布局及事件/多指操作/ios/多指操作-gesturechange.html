@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>gesturechange</title>
+  <style>
+    #box{width: 200px;height: 200px;background: #ff0000;color: #fff;font-size: 30px;}
+  </style>
+  <script>
+    document.addEventListener('touchstart', function(e){
+      e.preventDefault
+    } , { passive:true })
+  </script>
+</head>
+<body>
+  <div id="box"></div>
+  <script>
+    var box = document.querySelector('#box')
+    //当手指触摸元素,当前并上有两根或GM我问问根以上的手指执行
+    box.addEventListener('gesturestart', function(e){
+      this.style.backgroundColor = 'blue'
+    })
+
+    //当我们触发了gesturestart的时候,抬起手指,这时屏幕上的手指少于两个,或者当前元素上没有手指,就会触发该事件
+    box.addEventListener('gestureend', function(e){
+      this.style.backgroundColor = 'red'
+    })
+    //当我们触发了gesturestart的时候,手指的位置发生变化时执行
+    box.addEventListener('gesturechange', function(e){
+      //change时两根手指之间的距离和start时两根手指之间的距离的比值
+      box.innerHTML = e.scale
+      //旋转差
+      box.innerHTML = e.rotation
+    })
+  </script>
+</body>
+</html>
