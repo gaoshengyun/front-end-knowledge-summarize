@@ -64,3 +64,4 @@ typings/
 .vscode
 .DS_Store
 test.js
+test.html
