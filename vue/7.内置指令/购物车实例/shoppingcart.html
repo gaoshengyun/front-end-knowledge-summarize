@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>购物车</title>
+  <script src="./vue.js"></script>
+  <style>
+    *{padding: 0;margin: 0;}
+    [v-cloak]{display: none;}
+    body{margin: 50px;}
+    table{border-collapse: collapse;border: 1px solid #cccccc;border-spacing: 0;width: 600px;}
+    th,td{padding: 8px,16px;border:1px solid #cccccc;text-align: left;}
+    td{padding-left: 10px;font-style: 14px;}
+    th{background: #f7f7f7;color: #5c6b77;font-weight: bold;white-space: nowrap;padding-left: 10px;}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <table>
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>商品名称</th>
+          <th>商品单价</th>
+          <th>购买数量</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(item, index) in list" :key="index">
+          <td>{{index + 1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td><button type="button" @click="reduce(index)">-</button>
+            {{item.count}}
+            <button type="button" @click="add(index)">+</button>
+          </td>
+          <td><button type="button" @click="remove(index)">移除</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <div>总价:&yen; {{totalPrice}}</div>
+  </div>
+  
+
+  <script>
+    let list = [
+      {
+        id:1,
+        name:'99新 iphone 8 plus 256G红',
+        price:4999,
+        count:1
+      },
+      {
+        id:1,
+        name:'95新 华为mate20 6G+128G 翡翠冷',
+        price:4050.33,
+        count:1
+      },
+      {
+        id:3,
+        name:'99新 MacBook Pro FPXW2 银 8G+512G',
+        price:11099,
+        count:1
+      }
+    ]
+
+    var Vm = new Vue({
+      el:'#app',
+      data:{
+        list:list
+      },
+      methods:{
+        add(index){
+          this.list[index].count++
+        },
+        reduce(index){
+          if(this.list[index].count === 1){
+            return;
+          }
+          this.list[index].count--
+        },
+        remove(index){
+          this.list.splice(index,1)
+        }
+      },
+      computed:{
+        totalPrice(){
+          var total = 0
+          for (let i = 0; i < this.list.length; i++) {
+            total += this.list[i].price * this.list[i].count
+          }
+          return total.toFixed(2)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
