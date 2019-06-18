@@ -28,10 +28,10 @@
 				type: String,
 				default: '确定'
 			},
-			value:{
-				type:Boolean,
-				default: false
-			}
+      appShow:{
+        type:Boolean,
+        default:false
+      }
 		},
 		methods:{
 			okClick(){
@@ -40,7 +40,7 @@
 
 				this.$emit('ok-click');
 
-				this.$emit('input',false)
+				this.$emit('update:appShow',false)
 			}
 		}
 	}
@@ -55,10 +55,10 @@ p,h4{
 	border: 1px solid rgba(0,0,0,.2);
 	border-radius: 6px;
 	box-shadow: 0 3px 9px rgba(0,0,0,.5);
-	position: absolute;
+	/* position: absolute; */
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%,-50%);
+	/* transform: translate(-50%,-50%); */
 	z-index: 111;
 }
 .modal-header {
