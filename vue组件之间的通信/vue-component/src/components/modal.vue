@@ -31,16 +31,18 @@
       appShow:{
         type:Boolean,
         default:false
+      },
+      value:{
+        type:Boolean,
+        default:false
       }
 		},
 		methods:{
 			okClick(){
 				console.log('点击了ok按钮')
-				
-
 				this.$emit('ok-click');
 
-				this.$emit('update:appShow',false)
+				this.$emit('input',false)
 			}
 		}
 	}

@@ -1,11 +1,17 @@
 <template>
   <div>
     <button @click="show=true">登录</button>
-    <modal 
+    <!-- <modal 
       v-show="show" 
       title="自定义title" 
       ok-value="好" 
       :app-show.sync="show"
+    ></modal> -->
+    <modal 
+      v-show="show" 
+      title="自定义title" 
+      ok-value="好" 
+      v-model="show"
     ></modal>
   </div>
 </template>
